@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import XeroWeatherCore
 
 class WeatherTests: XCTestCase {
     func testWeatherInit() {
