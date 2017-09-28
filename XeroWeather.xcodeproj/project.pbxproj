@@ -14,6 +14,16 @@
 		870951501F7CAD7F001BB3EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8709514E1F7CAD7F001BB3EB /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		870951BF1F7CB197001BB3EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 870951BB1F7CB196001BB3EB /* XeroWeatherCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 870951B01F7CB196001BB3EB;
+			remoteInfo = XeroWeatherCore;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		870951421F7CAD7F001BB3EB /* XeroWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XeroWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		870951451F7CAD7F001BB3EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -22,6 +32,7 @@
 		8709514C1F7CAD7F001BB3EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8709514F1F7CAD7F001BB3EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		870951511F7CAD7F001BB3EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		870951BB1F7CB196001BB3EB /* XeroWeatherCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XeroWeatherCore.xcodeproj; path = XeroWeatherCore/XeroWeatherCore.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +49,7 @@
 		870951391F7CAD7F001BB3EB = {
 			isa = PBXGroup;
 			children = (
+				870951BB1F7CB196001BB3EB /* XeroWeatherCore.xcodeproj */,
 				870951441F7CAD7F001BB3EB /* XeroWeather */,
 				870951431F7CAD7F001BB3EB /* Products */,
 			);
@@ -62,6 +74,14 @@
 				870951511F7CAD7F001BB3EB /* Info.plist */,
 			);
 			path = XeroWeather;
+			sourceTree = "<group>";
+		};
+		870951BC1F7CB196001BB3EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				870951C01F7CB197001BB3EB /* XeroWeatherCore.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -111,12 +131,28 @@
 			mainGroup = 870951391F7CAD7F001BB3EB;
 			productRefGroup = 870951431F7CAD7F001BB3EB /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 870951BC1F7CB196001BB3EB /* Products */;
+					ProjectRef = 870951BB1F7CB196001BB3EB /* XeroWeatherCore.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				870951411F7CAD7F001BB3EB /* XeroWeather */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		870951C01F7CB197001BB3EB /* XeroWeatherCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = XeroWeatherCore.framework;
+			remoteRef = 870951BF1F7CB197001BB3EB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		870951401F7CAD7F001BB3EB /* Resources */ = {
