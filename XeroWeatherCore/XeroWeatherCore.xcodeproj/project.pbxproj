@@ -11,6 +11,8 @@
 		870951D91F7CB293001BB3EB /* XeroWeatherCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870951B01F7CB196001BB3EB /* XeroWeatherCore.framework */; };
 		870951E61F7CB401001BB3EB /* WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870951E51F7CB401001BB3EB /* WeatherTests.swift */; };
 		870951ED1F7CB502001BB3EB /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870951EC1F7CB502001BB3EB /* Weather.swift */; };
+		876370E11F7CBB620060FCB5 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876370E01F7CBB620060FCB5 /* Resource.swift */; };
+		876370E31F7CBBD40060FCB5 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876370E21F7CBBD40060FCB5 /* HTTPMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +33,8 @@
 		870951D81F7CB293001BB3EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		870951E51F7CB401001BB3EB /* WeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherTests.swift; path = XeroWeatherCoreTests/Sources/Models/WeatherTests.swift; sourceTree = SOURCE_ROOT; };
 		870951EC1F7CB502001BB3EB /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		876370E01F7CBB620060FCB5 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		876370E21F7CBBD40060FCB5 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +98,7 @@
 			children = (
 				870951E41F7CB3C4001BB3EB /* Models */,
 			);
-			name = Sources;
-			path = "New Group";
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		870951E41F7CB3C4001BB3EB /* Models */ = {
@@ -103,13 +106,13 @@
 			children = (
 				870951E51F7CB401001BB3EB /* WeatherTests.swift */,
 			);
-			name = Models;
-			path = "New Group";
+			path = Models;
 			sourceTree = "<group>";
 		};
 		870951EA1F7CB4AE001BB3EB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				876370DF1F7CBAC30060FCB5 /* Networking */,
 				870951EB1F7CB4D9001BB3EB /* Models */,
 			);
 			path = Sources;
@@ -121,6 +124,15 @@
 				870951EC1F7CB502001BB3EB /* Weather.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		876370DF1F7CBAC30060FCB5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				876370E01F7CBB620060FCB5 /* Resource.swift */,
+				876370E21F7CBBD40060FCB5 /* HTTPMethod.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +248,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				870951ED1F7CB502001BB3EB /* Weather.swift in Sources */,
+				876370E11F7CBB620060FCB5 /* Resource.swift in Sources */,
+				876370E31F7CBBD40060FCB5 /* HTTPMethod.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
