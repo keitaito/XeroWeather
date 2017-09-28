@@ -14,6 +14,8 @@
 		876370E11F7CBB620060FCB5 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876370E01F7CBB620060FCB5 /* Resource.swift */; };
 		876370E31F7CBBD40060FCB5 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876370E21F7CBBD40060FCB5 /* HTTPMethod.swift */; };
 		876370E61F7CC0950060FCB5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876370E51F7CC0950060FCB5 /* Alamofire.framework */; };
+		876370E91F7CC16D0060FCB5 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876370E81F7CC16D0060FCB5 /* WeatherAPI.swift */; };
+		876370EC1F7CC2250060FCB5 /* WeatherAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876370EB1F7CC2250060FCB5 /* WeatherAPITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 		876370E01F7CBB620060FCB5 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		876370E21F7CBBD40060FCB5 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		876370E51F7CC0950060FCB5 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		876370E81F7CC16D0060FCB5 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
+		876370EB1F7CC2250060FCB5 /* WeatherAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 		870951E31F7CB3AF001BB3EB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				876370EA1F7CC2040060FCB5 /* Networking */,
 				870951E41F7CB3C4001BB3EB /* Models */,
 			);
 			path = Sources;
@@ -135,6 +140,7 @@
 			children = (
 				876370E01F7CBB620060FCB5 /* Resource.swift */,
 				876370E21F7CBBD40060FCB5 /* HTTPMethod.swift */,
+				876370E81F7CC16D0060FCB5 /* WeatherAPI.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -145,6 +151,14 @@
 				876370E51F7CC0950060FCB5 /* Alamofire.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		876370EA1F7CC2040060FCB5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				876370EB1F7CC2250060FCB5 /* WeatherAPITests.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				870951ED1F7CB502001BB3EB /* Weather.swift in Sources */,
+				876370E91F7CC16D0060FCB5 /* WeatherAPI.swift in Sources */,
 				876370E11F7CBB620060FCB5 /* Resource.swift in Sources */,
 				876370E31F7CBBD40060FCB5 /* HTTPMethod.swift in Sources */,
 			);
@@ -289,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				870951E61F7CB401001BB3EB /* WeatherTests.swift in Sources */,
+				876370EC1F7CC2250060FCB5 /* WeatherAPITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
