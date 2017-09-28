@@ -12,6 +12,7 @@
 		8709514B1F7CAD7F001BB3EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 870951491F7CAD7F001BB3EB /* Main.storyboard */; };
 		8709514D1F7CAD7F001BB3EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8709514C1F7CAD7F001BB3EB /* Assets.xcassets */; };
 		870951501F7CAD7F001BB3EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8709514E1F7CAD7F001BB3EB /* LaunchScreen.storyboard */; };
+		870951F21F7CB632001BB3EB /* XeroWeatherCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870951C01F7CB197001BB3EB /* XeroWeatherCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -21,6 +22,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 870951B01F7CB196001BB3EB;
 			remoteInfo = XeroWeatherCore;
+		};
+		870951F01F7CB632001BB3EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 870951BB1F7CB196001BB3EB /* XeroWeatherCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 870951D41F7CB293001BB3EB;
+			remoteInfo = XeroWeatherCoreTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -40,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				870951F21F7CB632001BB3EB /* XeroWeatherCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +61,7 @@
 				870951BB1F7CB196001BB3EB /* XeroWeatherCore.xcodeproj */,
 				870951441F7CAD7F001BB3EB /* XeroWeather */,
 				870951431F7CAD7F001BB3EB /* Products */,
+				870951EE1F7CB632001BB3EB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,8 +90,16 @@
 			isa = PBXGroup;
 			children = (
 				870951C01F7CB197001BB3EB /* XeroWeatherCore.framework */,
+				870951F11F7CB632001BB3EB /* XeroWeatherCoreTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		870951EE1F7CB632001BB3EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +168,13 @@
 			fileType = wrapper.framework;
 			path = XeroWeatherCore.framework;
 			remoteRef = 870951BF1F7CB197001BB3EB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		870951F11F7CB632001BB3EB /* XeroWeatherCoreTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XeroWeatherCoreTests.xctest;
+			remoteRef = 870951F01F7CB632001BB3EB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
