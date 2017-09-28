@@ -8,12 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		870951B51F7CB196001BB3EB /* XeroWeatherCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 870951B31F7CB196001BB3EB /* XeroWeatherCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		870951D91F7CB293001BB3EB /* XeroWeatherCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870951B01F7CB196001BB3EB /* XeroWeatherCore.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		870951DA1F7CB293001BB3EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 870951A71F7CB196001BB3EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 870951AF1F7CB196001BB3EB;
+			remoteInfo = XeroWeatherCore;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		870951B01F7CB196001BB3EB /* XeroWeatherCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XeroWeatherCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		870951B31F7CB196001BB3EB /* XeroWeatherCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XeroWeatherCore.h; sourceTree = "<group>"; };
 		870951B41F7CB196001BB3EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		870951D41F7CB293001BB3EB /* XeroWeatherCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XeroWeatherCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		870951D81F7CB293001BB3EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,6 +37,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		870951D11F7CB293001BB3EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				870951D91F7CB293001BB3EB /* XeroWeatherCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -31,6 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				870951B21F7CB196001BB3EB /* XeroWeatherCore */,
+				870951D51F7CB293001BB3EB /* XeroWeatherCoreTests */,
 				870951B11F7CB196001BB3EB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -39,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				870951B01F7CB196001BB3EB /* XeroWeatherCore.framework */,
+				870951D41F7CB293001BB3EB /* XeroWeatherCoreTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -50,6 +73,14 @@
 				870951B41F7CB196001BB3EB /* Info.plist */,
 			);
 			path = XeroWeatherCore;
+			sourceTree = "<group>";
+		};
+		870951D51F7CB293001BB3EB /* XeroWeatherCoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				870951D81F7CB293001BB3EB /* Info.plist */,
+			);
+			path = XeroWeatherCoreTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,17 +115,41 @@
 			productReference = 870951B01F7CB196001BB3EB /* XeroWeatherCore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		870951D31F7CB293001BB3EB /* XeroWeatherCoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 870951DE1F7CB293001BB3EB /* Build configuration list for PBXNativeTarget "XeroWeatherCoreTests" */;
+			buildPhases = (
+				870951D01F7CB293001BB3EB /* Sources */,
+				870951D11F7CB293001BB3EB /* Frameworks */,
+				870951D21F7CB293001BB3EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				870951DB1F7CB293001BB3EB /* PBXTargetDependency */,
+			);
+			name = XeroWeatherCoreTests;
+			productName = XeroWeatherCoreTests;
+			productReference = 870951D41F7CB293001BB3EB /* XeroWeatherCoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		870951A71F7CB196001BB3EB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Keita Ito";
 				TargetAttributes = {
 					870951AF1F7CB196001BB3EB = {
 						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					870951D31F7CB293001BB3EB = {
+						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -112,12 +167,20 @@
 			projectRoot = "";
 			targets = (
 				870951AF1F7CB196001BB3EB /* XeroWeatherCore */,
+				870951D31F7CB293001BB3EB /* XeroWeatherCoreTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		870951AE1F7CB196001BB3EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		870951D21F7CB293001BB3EB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -134,7 +197,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		870951D01F7CB293001BB3EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		870951DB1F7CB293001BB3EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 870951AF1F7CB196001BB3EB /* XeroWeatherCore */;
+			targetProxy = 870951DA1F7CB293001BB3EB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		870951B61F7CB196001BB3EB /* Debug */ = {
@@ -292,6 +370,37 @@
 			};
 			name = Release;
 		};
+		870951DC1F7CB293001BB3EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D433NUFZ5K;
+				INFOPLIST_FILE = XeroWeatherCoreTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.keitaito.XeroWeatherCoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		870951DD1F7CB293001BB3EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D433NUFZ5K;
+				INFOPLIST_FILE = XeroWeatherCoreTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.keitaito.XeroWeatherCoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -309,6 +418,15 @@
 			buildConfigurations = (
 				870951B91F7CB196001BB3EB /* Debug */,
 				870951BA1F7CB196001BB3EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		870951DE1F7CB293001BB3EB /* Build configuration list for PBXNativeTarget "XeroWeatherCoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				870951DC1F7CB293001BB3EB /* Debug */,
+				870951DD1F7CB293001BB3EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
