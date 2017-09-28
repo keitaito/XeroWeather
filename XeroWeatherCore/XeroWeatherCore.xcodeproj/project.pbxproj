@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		870951B51F7CB196001BB3EB /* XeroWeatherCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 870951B31F7CB196001BB3EB /* XeroWeatherCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		870951D91F7CB293001BB3EB /* XeroWeatherCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870951B01F7CB196001BB3EB /* XeroWeatherCore.framework */; };
+		870951E61F7CB401001BB3EB /* WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870951E51F7CB401001BB3EB /* WeatherTests.swift */; };
+		870951ED1F7CB502001BB3EB /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870951EC1F7CB502001BB3EB /* Weather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,8 @@
 		870951B41F7CB196001BB3EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		870951D41F7CB293001BB3EB /* XeroWeatherCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XeroWeatherCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		870951D81F7CB293001BB3EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		870951E51F7CB401001BB3EB /* WeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherTests.swift; path = XeroWeatherCoreTests/Sources/Models/WeatherTests.swift; sourceTree = SOURCE_ROOT; };
+		870951EC1F7CB502001BB3EB /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 		870951B21F7CB196001BB3EB /* XeroWeatherCore */ = {
 			isa = PBXGroup;
 			children = (
+				870951EA1F7CB4AE001BB3EB /* Sources */,
 				870951B31F7CB196001BB3EB /* XeroWeatherCore.h */,
 				870951B41F7CB196001BB3EB /* Info.plist */,
 			);
@@ -78,9 +83,44 @@
 		870951D51F7CB293001BB3EB /* XeroWeatherCoreTests */ = {
 			isa = PBXGroup;
 			children = (
+				870951E31F7CB3AF001BB3EB /* Sources */,
 				870951D81F7CB293001BB3EB /* Info.plist */,
 			);
 			path = XeroWeatherCoreTests;
+			sourceTree = "<group>";
+		};
+		870951E31F7CB3AF001BB3EB /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				870951E41F7CB3C4001BB3EB /* Models */,
+			);
+			name = Sources;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		870951E41F7CB3C4001BB3EB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				870951E51F7CB401001BB3EB /* WeatherTests.swift */,
+			);
+			name = Models;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		870951EA1F7CB4AE001BB3EB /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				870951EB1F7CB4D9001BB3EB /* Models */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		870951EB1F7CB4D9001BB3EB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				870951EC1F7CB502001BB3EB /* Weather.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +185,7 @@
 				TargetAttributes = {
 					870951AF1F7CB196001BB3EB = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					870951D31F7CB293001BB3EB = {
@@ -194,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				870951ED1F7CB502001BB3EB /* Weather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				870951E61F7CB401001BB3EB /* WeatherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +374,7 @@
 		870951B91F7CB196001BB3EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -344,6 +388,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.keitaito.XeroWeatherCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -352,6 +397,7 @@
 		870951BA1F7CB196001BB3EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -373,6 +419,7 @@
 		870951DC1F7CB293001BB3EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D433NUFZ5K;
@@ -389,6 +436,7 @@
 		870951DD1F7CB293001BB3EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D433NUFZ5K;
