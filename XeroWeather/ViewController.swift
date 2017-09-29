@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let weather = Weather(cityName: "San Fransokyo")
+        let weather = WeatherItem(cityName: "San Fransokyo")
         title = weather.cityName
     }
 

@@ -1,0 +1,23 @@
+//
+//  Condition.swift
+//  XeroWeatherCore
+//
+//  Created by Keita Ito on 9/29/17.
+//  Copyright © 2017 Keita Ito. All rights reserved.
+//
+
+import Foundation
+
+public struct Condition: Codable {
+    enum CodingKeys: String, CodingKey {
+        case id
+        case state = "main"
+        case description
+        case iconString = "icon"
+    }
+    
+    public let id: Int
+    public let state: String
+    public let description: String
+    public let iconString: String
+}
