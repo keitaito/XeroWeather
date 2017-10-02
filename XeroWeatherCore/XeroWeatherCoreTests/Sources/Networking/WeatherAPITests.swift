@@ -11,20 +11,20 @@ import XeroWeatherCore
 
 class WeatherAPITests: XCTestCase {
     
-    let api = WeatherAPI()
+    let givenName = "San Francisco County"
     
-    func testWeatherAPI() {
-        let e = expectation(description: "testWeatherAPI()")
+    let api = WeatherAPI()
+    let parameters: Resource.Parameters = ["id": 5391997,
+                                           "appid": "e80b662e177680f3e0e730ba8e469c9d"]
+    
+    func testAPICurrentWeather() {
+        let e = expectation(description: "testAPICurrentWeather()")
         
-        let givenName = "San Francisco County"
+        let url = URL(string: "https://api.openweathermap.org/data/2.5/weather")!
         
-        let url = URL(string: "http://api.openweathermap.org/data/2.5/weather")!
-        let parameters: Resource.Parameters = ["id": 5391997,
-                                               "appid": "e80b662e177680f3e0e730ba8e469c9d"]
-        
-        let resource = Resource<WeatherItem>(url: url, method: .get, parameters: parameters, headers: nil, parse: { jsonData in
+        let resource = Resource<CurrentWeather>(url: url, method: .get, parameters: parameters, headers: nil, parse: { json in
             do {
-                return try JSONDecoder().decode(WeatherItem.self, from: jsonData)
+                return try JSONDecoder().decode(CurrentWeather.self, from: json)
             } catch {
                 XCTFail(error.localizedDescription)
                 return nil
@@ -34,10 +34,40 @@ class WeatherAPITests: XCTestCase {
         api.load(resource) { (weather) in
             guard let weather = weather else { XCTFail("weather is nil."); return }
             print(weather)
-            XCTAssertEqual(weather.cityName, givenName)
+            XCTAssertEqual(weather.cityName, self.givenName)
             e.fulfill()
         }
         
+        waitForExpectations(timeout: 5) { (error) in
+            error.map { XCTFail($0.localizedDescription); return }
+        }
+    }
+    
+    func testAPIFiveDayForecast() {
+        let e = expectation(description: "testAPIFiveDayForecast()")
+        
+        let url = URL(string: "https://api.openweathermap.org/data/2.5/forecast")!
+        let resource = Resource<Forecast>(url: url, method: .get, parameters: parameters, headers: nil, parse: { json in
+            do {
+                let my_jsonObj = try JSONSerialization.jsonObject(with: json, options: [])
+                print(my_jsonObj)
+            } catch {
+                print(error.localizedDescription)
+            }
+            
+            do {
+                return try JSONDecoder().decode(Forecast.self, from: json)
+            } catch {
+                XCTFail(error.localizedDescription)
+                return nil
+            }
+        })
+        
+        api.load(resource) { (forecast) in
+            XCTAssertEqual(forecast?.city.name, self.givenName)
+            e.fulfill()
+        }
+
         waitForExpectations(timeout: 5) { (error) in
             error.map { XCTFail($0.localizedDescription); return }
         }

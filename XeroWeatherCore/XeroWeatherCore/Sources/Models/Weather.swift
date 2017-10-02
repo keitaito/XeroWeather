@@ -1,5 +1,5 @@
 //
-//  Condition.swift
+//  Weather.swift
 //  XeroWeatherCore
 //
 //  Created by Keita Ito on 9/29/17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Condition: Codable {
+public struct Weather: Codable {
     enum CodingKeys: String, CodingKey {
         case id
         case state = "main"

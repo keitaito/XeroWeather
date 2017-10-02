@@ -18,7 +18,7 @@ public struct Climate: Codable {
     }
     
     public let temperature: Double
-    public let pressure: Int
+    public let pressure: Double
     public let humidity: Int
     public let minTemperature: Double
     public let maxTemperature: Double

@@ -12,8 +12,10 @@ public struct Wind: Codable {
     enum CodingKeys: String, CodingKey {
         case speed
         case degree = "deg"
+        case gust
     }
     
     public let speed: Double
-    public let degree: Int
+    public let degree: Double?
+    public let gust: Double?
 }

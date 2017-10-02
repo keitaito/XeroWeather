@@ -10,17 +10,25 @@
 		870951B51F7CB196001BB3EB /* XeroWeatherCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 870951B31F7CB196001BB3EB /* XeroWeatherCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		870951D91F7CB293001BB3EB /* XeroWeatherCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870951B01F7CB196001BB3EB /* XeroWeatherCore.framework */; };
 		870951E61F7CB401001BB3EB /* WeatherItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870951E51F7CB401001BB3EB /* WeatherItemTests.swift */; };
-		870951ED1F7CB502001BB3EB /* WeatherItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870951EC1F7CB502001BB3EB /* WeatherItem.swift */; };
+		870951ED1F7CB502001BB3EB /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870951EC1F7CB502001BB3EB /* CurrentWeather.swift */; };
 		873BAA1C1F7ECCCF004F47F9 /* current-weather-by-city-id.json in Resources */ = {isa = PBXBuildFile; fileRef = 873BAA1B1F7ECCCF004F47F9 /* current-weather-by-city-id.json */; };
+		875D5EC01F81CD2D00ED4E8C /* WeatherItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875D5EBF1F81CD2D00ED4E8C /* WeatherItem.swift */; };
+		875D5EC21F81D1B200ED4E8C /* Clouds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875D5EC11F81D1B200ED4E8C /* Clouds.swift */; };
+		875D5EC41F81D61000ED4E8C /* CloudsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875D5EC31F81D61000ED4E8C /* CloudsTests.swift */; };
 		876370E11F7CBB620060FCB5 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876370E01F7CBB620060FCB5 /* Resource.swift */; };
 		876370E31F7CBBD40060FCB5 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876370E21F7CBBD40060FCB5 /* HTTPMethod.swift */; };
 		876370E61F7CC0950060FCB5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876370E51F7CC0950060FCB5 /* Alamofire.framework */; };
 		876370E91F7CC16D0060FCB5 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876370E81F7CC16D0060FCB5 /* WeatherAPI.swift */; };
 		876370EC1F7CC2250060FCB5 /* WeatherAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876370EB1F7CC2250060FCB5 /* WeatherAPITests.swift */; };
 		8764486A1F7F069E00239319 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876448691F7F069E00239319 /* Coordinate.swift */; };
-		8764486C1F7F06B700239319 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8764486B1F7F06B700239319 /* Condition.swift */; };
+		8764486C1F7F06B700239319 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8764486B1F7F06B700239319 /* Weather.swift */; };
 		8764486E1F7F0C3600239319 /* Climate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8764486D1F7F0C3600239319 /* Climate.swift */; };
 		876448701F7F0D8600239319 /* Wind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8764486F1F7F0D8600239319 /* Wind.swift */; };
+		876448721F81764500239319 /* five-day-weather-forecast.json in Resources */ = {isa = PBXBuildFile; fileRef = 876448711F81764500239319 /* five-day-weather-forecast.json */; };
+		876448741F81858D00239319 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876448731F81858D00239319 /* City.swift */; };
+		876448761F818E4A00239319 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876448751F818E4A00239319 /* Forecast.swift */; };
+		8771768D1F81DB4400E9A16A /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8771768C1F81DB4400E9A16A /* TestHelper.swift */; };
+		877176901F81DBDF00E9A16A /* ForecastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8771768F1F81DBDF00E9A16A /* ForecastTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,17 +48,25 @@
 		870951D41F7CB293001BB3EB /* XeroWeatherCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XeroWeatherCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		870951D81F7CB293001BB3EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		870951E51F7CB401001BB3EB /* WeatherItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherItemTests.swift; path = XeroWeatherCoreTests/Sources/Models/WeatherItemTests.swift; sourceTree = SOURCE_ROOT; };
-		870951EC1F7CB502001BB3EB /* WeatherItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherItem.swift; sourceTree = "<group>"; };
+		870951EC1F7CB502001BB3EB /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		873BAA1B1F7ECCCF004F47F9 /* current-weather-by-city-id.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "current-weather-by-city-id.json"; path = "../../../../api/current-weather-by-city-id.json"; sourceTree = "<group>"; };
+		875D5EBF1F81CD2D00ED4E8C /* WeatherItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherItem.swift; sourceTree = "<group>"; };
+		875D5EC11F81D1B200ED4E8C /* Clouds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clouds.swift; sourceTree = "<group>"; };
+		875D5EC31F81D61000ED4E8C /* CloudsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsTests.swift; sourceTree = "<group>"; };
 		876370E01F7CBB620060FCB5 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		876370E21F7CBBD40060FCB5 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		876370E51F7CC0950060FCB5 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		876370E81F7CC16D0060FCB5 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		876370EB1F7CC2250060FCB5 /* WeatherAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPITests.swift; sourceTree = "<group>"; };
 		876448691F7F069E00239319 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
-		8764486B1F7F06B700239319 /* Condition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
+		8764486B1F7F06B700239319 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		8764486D1F7F0C3600239319 /* Climate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Climate.swift; sourceTree = "<group>"; };
 		8764486F1F7F0D8600239319 /* Wind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wind.swift; sourceTree = "<group>"; };
+		876448711F81764500239319 /* five-day-weather-forecast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "five-day-weather-forecast.json"; path = "../../../../api/five-day-weather-forecast.json"; sourceTree = "<group>"; };
+		876448731F81858D00239319 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		876448751F818E4A00239319 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		8771768C1F81DB4400E9A16A /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
+		8771768F1F81DBDF00E9A16A /* ForecastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +133,7 @@
 			children = (
 				876370EA1F7CC2040060FCB5 /* Networking */,
 				870951E41F7CB3C4001BB3EB /* Models */,
+				8771768E1F81DB4900E9A16A /* Helpers */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -125,6 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				870951E51F7CB401001BB3EB /* WeatherItemTests.swift */,
+				8771768F1F81DBDF00E9A16A /* ForecastTests.swift */,
+				875D5EC31F81D61000ED4E8C /* CloudsTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -141,11 +160,15 @@
 		870951EB1F7CB4D9001BB3EB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				870951EC1F7CB502001BB3EB /* WeatherItem.swift */,
+				870951EC1F7CB502001BB3EB /* CurrentWeather.swift */,
 				876448691F7F069E00239319 /* Coordinate.swift */,
-				8764486B1F7F06B700239319 /* Condition.swift */,
+				8764486B1F7F06B700239319 /* Weather.swift */,
 				8764486D1F7F0C3600239319 /* Climate.swift */,
 				8764486F1F7F0D8600239319 /* Wind.swift */,
+				875D5EC11F81D1B200ED4E8C /* Clouds.swift */,
+				876448731F81858D00239319 /* City.swift */,
+				876448751F818E4A00239319 /* Forecast.swift */,
+				875D5EBF1F81CD2D00ED4E8C /* WeatherItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -154,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				873BAA1B1F7ECCCF004F47F9 /* current-weather-by-city-id.json */,
+				876448711F81764500239319 /* five-day-weather-forecast.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -182,6 +206,14 @@
 				876370EB1F7CC2250060FCB5 /* WeatherAPITests.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		8771768E1F81DB4900E9A16A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8771768C1F81DB4400E9A16A /* TestHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				876448721F81764500239319 /* five-day-weather-forecast.json in Resources */,
 				873BAA1C1F7ECCCF004F47F9 /* current-weather-by-city-id.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,12 +349,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				870951ED1F7CB502001BB3EB /* WeatherItem.swift in Sources */,
+				870951ED1F7CB502001BB3EB /* CurrentWeather.swift in Sources */,
+				875D5EC01F81CD2D00ED4E8C /* WeatherItem.swift in Sources */,
 				876370E91F7CC16D0060FCB5 /* WeatherAPI.swift in Sources */,
+				876448741F81858D00239319 /* City.swift in Sources */,
 				876370E11F7CBB620060FCB5 /* Resource.swift in Sources */,
+				876448761F818E4A00239319 /* Forecast.swift in Sources */,
 				876370E31F7CBBD40060FCB5 /* HTTPMethod.swift in Sources */,
-				8764486C1F7F06B700239319 /* Condition.swift in Sources */,
+				8764486C1F7F06B700239319 /* Weather.swift in Sources */,
 				8764486A1F7F069E00239319 /* Coordinate.swift in Sources */,
+				875D5EC21F81D1B200ED4E8C /* Clouds.swift in Sources */,
 				8764486E1F7F0C3600239319 /* Climate.swift in Sources */,
 				876448701F7F0D8600239319 /* Wind.swift in Sources */,
 			);
@@ -331,8 +368,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				877176901F81DBDF00E9A16A /* ForecastTests.swift in Sources */,
 				870951E61F7CB401001BB3EB /* WeatherItemTests.swift in Sources */,
+				875D5EC41F81D61000ED4E8C /* CloudsTests.swift in Sources */,
 				876370EC1F7CC2250060FCB5 /* WeatherAPITests.swift in Sources */,
+				8771768D1F81DB4400E9A16A /* TestHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

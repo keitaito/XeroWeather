@@ -1,5 +1,5 @@
 //
-//  WeatherItemTests.swift
+//  CurrentWeatherTests.swift
 //  XeroWeatherCoreTests
 //
 //  Created by Keita Ito on 9/27/17.
@@ -9,24 +9,19 @@
 import XCTest
 import XeroWeatherCore
 
-class WeatherItemTests: XCTestCase {
-    func testWeatherItemInit() {
+class CurrentWeatherTests: XCTestCase {
+    
+    // given
+    let givenCityName = "San Francisco County"
+    let givenCoordinate = Coordinate(longitude: -122.45, latitude: 37.77)
+    
+    func testCurrentWeatherInit() {
         // given
-        let givenCityName = "San Francisco County"
-        let givenCoordinate = Coordinate(longitude: -122.45, latitude: 37.77)
-        
-        // Load JSON file from the unit test bundle.
-        guard let jsonPath = Bundle(for: type(of: self)).path(forResource: "current-weather-by-city-id", ofType: "json") else {
-            XCTFail("jsonPath is nil."); return
-        }
-        
-        guard let jsonData = try? Data(contentsOf: URL(fileURLWithPath: jsonPath)) else {
-            XCTFail("jsonData is nil."); return
-        }
+        let json = TestHelper().loadJSON(name: "current-weather-by-city-id.json")!
         
         // when
         do {
-            let weather = try JSONDecoder().decode(WeatherItem.self, from: jsonData)
+            let weather = try JSONDecoder().decode(CurrentWeather.self, from: json)
             
             // then
             XCTAssertEqual(weather.cityName, givenCityName)
@@ -36,6 +31,4 @@ class WeatherItemTests: XCTestCase {
             XCTFail(error.localizedDescription); return
         }
     }
-    
-     
 }
