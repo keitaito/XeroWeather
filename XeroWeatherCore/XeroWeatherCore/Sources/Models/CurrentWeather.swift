@@ -18,6 +18,7 @@ public class CurrentWeather: Codable {
         case clouds
         case dateValue = "dt"
         case id
+        case sys
     }
     
     public let cityName: String
@@ -28,8 +29,9 @@ public class CurrentWeather: Codable {
     public let clouds: Clouds
     public let dateValue: Int
     public let id: Int
+    public let sys: Sys
     
-    public init(cityName: String, coordinate: Coordinate, weather: [Weather], climate: Climate, wind: Wind, clouds: Clouds, dateValue: Int, id: Int) {
+    public init(cityName: String, coordinate: Coordinate, weather: [Weather], climate: Climate, wind: Wind, clouds: Clouds, dateValue: Int, id: Int, sys: Sys) {
         self.cityName = cityName
         self.coordinate = coordinate
         self.weather = weather
@@ -38,6 +40,7 @@ public class CurrentWeather: Codable {
         self.clouds = clouds
         self.dateValue = dateValue
         self.id = id
+        self.sys = sys
     }
 }
 

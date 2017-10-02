@@ -14,7 +14,7 @@ class WeatherAPITests: XCTestCase {
     let givenName = "San Francisco County"
     
     let api = WeatherAPI()
-    let parameters: Resource.Parameters = ["id": 5391997,
+    let defaultParameters: Resource.Parameters = ["id": 5391997,
                                            "appid": "e80b662e177680f3e0e730ba8e469c9d"]
     
     func testAPICurrentWeather() {
@@ -22,7 +22,7 @@ class WeatherAPITests: XCTestCase {
         
         let url = URL(string: "https://api.openweathermap.org/data/2.5/weather")!
         
-        let resource = Resource<CurrentWeather>(url: url, method: .get, parameters: parameters, headers: nil, parse: { json in
+        let resource = Resource<CurrentWeather>(url: url, method: .get, parameters: defaultParameters, headers: nil, parse: { json in
             do {
                 return try JSONDecoder().decode(CurrentWeather.self, from: json)
             } catch {
@@ -47,14 +47,7 @@ class WeatherAPITests: XCTestCase {
         let e = expectation(description: "testAPIFiveDayForecast()")
         
         let url = URL(string: "https://api.openweathermap.org/data/2.5/forecast")!
-        let resource = Resource<Forecast>(url: url, method: .get, parameters: parameters, headers: nil, parse: { json in
-            do {
-                let my_jsonObj = try JSONSerialization.jsonObject(with: json, options: [])
-                print(my_jsonObj)
-            } catch {
-                print(error.localizedDescription)
-            }
-            
+        let resource = Resource<Forecast>(url: url, method: .get, parameters: defaultParameters, headers: nil, parse: { json in
             do {
                 return try JSONDecoder().decode(Forecast.self, from: json)
             } catch {
@@ -68,6 +61,34 @@ class WeatherAPITests: XCTestCase {
             e.fulfill()
         }
 
+        waitForExpectations(timeout: 5) { (error) in
+            error.map { XCTFail($0.localizedDescription); return }
+        }
+    }
+    
+    func testAPIFind() {
+        let e = expectation(description: "testAPIFind()")
+        
+        let url = URL(string: "https://api.openweathermap.org/data/2.5/find")!
+        let parameters = ["q": "San Francisco",
+                          "type": "like",
+                          "appid": "e80b662e177680f3e0e730ba8e469c9d"]
+        let expectedName = "San Francisco"
+        
+        let resource = Resource<FindAPIResult>(url: url, method: .get, parameters: parameters, headers: nil, parse: { json in
+            do {
+                return try JSONDecoder().decode(FindAPIResult.self, from: json)
+            } catch {
+                XCTFail(error.localizedDescription)
+                return nil
+            }
+        })
+        
+        api.load(resource) { (result) in
+            XCTAssertEqual(result?.list.first?.cityName, expectedName)
+            e.fulfill()
+        }
+        
         waitForExpectations(timeout: 5) { (error) in
             error.map { XCTFail($0.localizedDescription); return }
         }
