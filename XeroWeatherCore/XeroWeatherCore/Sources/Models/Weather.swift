@@ -2,16 +2,22 @@
 //  Weather.swift
 //  XeroWeatherCore
 //
-//  Created by Keita Ito on 9/27/17.
+//  Created by Keita Ito on 9/29/17.
 //  Copyright © 2017 Keita Ito. All rights reserved.
 //
 
 import Foundation
 
-public class Weather {
-    public let cityName: String
-    
-    public init(cityName: String) {
-        self.cityName = cityName
+public struct Weather: Codable {
+    enum CodingKeys: String, CodingKey {
+        case id
+        case state = "main"
+        case description
+        case iconString = "icon"
     }
+    
+    public let id: Int
+    public let state: String
+    public let description: String
+    public let iconString: String
 }
