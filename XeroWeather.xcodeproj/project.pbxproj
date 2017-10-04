@@ -12,6 +12,7 @@
 		8709514D1F7CAD7F001BB3EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8709514C1F7CAD7F001BB3EB /* Assets.xcassets */; };
 		870951501F7CAD7F001BB3EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8709514E1F7CAD7F001BB3EB /* LaunchScreen.storyboard */; };
 		870951F21F7CB632001BB3EB /* XeroWeatherCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870951C01F7CB197001BB3EB /* XeroWeatherCore.framework */; };
+		876E613F1F84670F00DB7C01 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876E613E1F84670F00DB7C01 /* RootViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		8709514F1F7CAD7F001BB3EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		870951511F7CAD7F001BB3EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		870951BB1F7CB196001BB3EB /* XeroWeatherCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XeroWeatherCore.xcodeproj; path = XeroWeatherCore/XeroWeatherCore.xcodeproj; sourceTree = "<group>"; };
+		876E613E1F84670F00DB7C01 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			children = (
 				870951451F7CAD7F001BB3EB /* AppDelegate.swift */,
 				870951471F7CAD7F001BB3EB /* ViewController.swift */,
+				876E613D1F8466F800DB7C01 /* ViewControllers */,
 				8709514C1F7CAD7F001BB3EB /* Assets.xcassets */,
 				8709514E1F7CAD7F001BB3EB /* LaunchScreen.storyboard */,
 				870951511F7CAD7F001BB3EB /* Info.plist */,
@@ -97,6 +100,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		876E613D1F8466F800DB7C01 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				876E613E1F84670F00DB7C01 /* RootViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +206,7 @@
 			files = (
 				870951481F7CAD7F001BB3EB /* ViewController.swift in Sources */,
 				870951461F7CAD7F001BB3EB /* AppDelegate.swift in Sources */,
+				876E613F1F84670F00DB7C01 /* RootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
