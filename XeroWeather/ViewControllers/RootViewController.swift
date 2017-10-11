@@ -12,6 +12,7 @@ import XeroWeatherCore
 
 class RootViewController: UIViewController {
     
+    private var spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     private var locationManager: CLLocationManager?
     private var currentLocation: CLLocation? {
         didSet {
@@ -38,6 +39,11 @@ class RootViewController: UIViewController {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse, .authorizedAlways:
             print("Location Service is available.")
+            
+            view.addSubview(spinner)
+            spinner.center = view.center
+            spinner.startAnimating()
+            
             locationManager = CLLocationManager()
             locationManager?.delegate = self
             locationManager?.requestLocation(errorHandler: errorHandler)
@@ -88,10 +94,17 @@ class RootViewController: UIViewController {
 
 extension RootViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        view.addSubview(spinner)
+        spinner.center = view.center
+        spinner.startAnimating()
+        
         manager.checkLocationServiceAuthorization(status: status, errorHandler: errorHandler)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        spinner.stopAnimating()
+        spinner.removeFromSuperview()
+        
         guard let location = locations.last else {
             errorHandler("No CLLocation object in locations.")
             return

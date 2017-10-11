@@ -27,20 +27,10 @@ class CityTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
-            let vc = WeatherViewController()
-            print(vc.view)
-            let nc = UINavigationController(rootViewController: vc)
-            
-            self.present(nc, animated: true) {
-                print("presenting vc is completed.")
-            }
-        }
+        let vc = WeatherViewController(location: viewModel.currentLocation)
+        let nc = UINavigationController(rootViewController: vc)
+        present(nc, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
