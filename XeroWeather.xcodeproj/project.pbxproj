@@ -10,6 +10,7 @@
 		870951461F7CAD7F001BB3EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870951451F7CAD7F001BB3EB /* AppDelegate.swift */; };
 		8709514D1F7CAD7F001BB3EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8709514C1F7CAD7F001BB3EB /* Assets.xcassets */; };
 		870951501F7CAD7F001BB3EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8709514E1F7CAD7F001BB3EB /* LaunchScreen.storyboard */; };
+		8733B7EC1F8DA25F00602D1E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8733B7EB1F8DA25F00602D1E /* Alamofire.framework */; };
 		8749F9DD1F8D99C7009F77ED /* XeroWeatherCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870951C01F7CB197001BB3EB /* XeroWeatherCore.framework */; };
 		8749F9DE1F8D99C7009F77ED /* XeroWeatherCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 870951C01F7CB197001BB3EB /* XeroWeatherCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		87F271001F8CBDF60077166F /* LocationServicePermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87153DD01F86FA4D005BE52F /* LocationServicePermissionView.swift */; };
@@ -65,6 +66,7 @@
 		870951511F7CAD7F001BB3EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		870951BB1F7CB196001BB3EB /* XeroWeatherCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XeroWeatherCore.xcodeproj; path = XeroWeatherCore/XeroWeatherCore.xcodeproj; sourceTree = "<group>"; };
 		87153DD01F86FA4D005BE52F /* LocationServicePermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServicePermissionView.swift; sourceTree = "<group>"; };
+		8733B7EB1F8DA25F00602D1E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = XeroWeatherCore/Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		876E613E1F84670F00DB7C01 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		876E61401F8479C700DB7C01 /* CityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewController.swift; sourceTree = "<group>"; };
 		8781ECB11F8C7067000142F0 /* CityTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewModel.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8749F9DD1F8D99C7009F77ED /* XeroWeatherCore.framework in Frameworks */,
+				8733B7EC1F8DA25F00602D1E /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +130,7 @@
 		870951EE1F7CB632001BB3EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8733B7EB1F8DA25F00602D1E /* Alamofire.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -168,6 +172,7 @@
 				8709513F1F7CAD7F001BB3EB /* Frameworks */,
 				870951401F7CAD7F001BB3EB /* Resources */,
 				8749F9E11F8D99C7009F77ED /* Embed Frameworks */,
+				8733B7ED1F8DA29D00602D1E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -247,6 +252,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8733B7ED1F8DA29D00602D1E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/XeroWeatherCore/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8709513E1F7CAD7F001BB3EB /* Sources */ = {
@@ -398,6 +421,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D433NUFZ5K;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XeroWeatherCore/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = XeroWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.keitaito.XeroWeather;
@@ -414,6 +441,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D433NUFZ5K;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XeroWeatherCore/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = XeroWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.keitaito.XeroWeather;

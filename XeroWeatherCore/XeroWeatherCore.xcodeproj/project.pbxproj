@@ -11,8 +11,9 @@
 		870951D91F7CB293001BB3EB /* XeroWeatherCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870951B01F7CB196001BB3EB /* XeroWeatherCore.framework */; };
 		870951E61F7CB401001BB3EB /* WeatherItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870951E51F7CB401001BB3EB /* WeatherItemTests.swift */; };
 		870951ED1F7CB502001BB3EB /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870951EC1F7CB502001BB3EB /* CurrentWeather.swift */; };
+		8733B7EA1F8DA25000602D1E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876370E51F7CC0950060FCB5 /* Alamofire.framework */; };
+		8733B7EE1F8DA33000602D1E /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876370E81F7CC16D0060FCB5 /* WeatherAPI.swift */; };
 		873BAA1C1F7ECCCF004F47F9 /* current-weather-by-city-id.json in Resources */ = {isa = PBXBuildFile; fileRef = 873BAA1B1F7ECCCF004F47F9 /* current-weather-by-city-id.json */; };
-		8749F9E21F8D9A79009F77ED /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876370E51F7CC0950060FCB5 /* Alamofire.framework */; };
 		875D5EC01F81CD2D00ED4E8C /* WeatherItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875D5EBF1F81CD2D00ED4E8C /* WeatherItem.swift */; };
 		875D5EC21F81D1B200ED4E8C /* Clouds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875D5EC11F81D1B200ED4E8C /* Clouds.swift */; };
 		875D5EC41F81D61000ED4E8C /* CloudsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875D5EC31F81D61000ED4E8C /* CloudsTests.swift */; };
@@ -83,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8749F9E21F8D9A79009F77ED /* Alamofire.framework in Frameworks */,
+				8733B7EA1F8DA25000602D1E /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +269,6 @@
 				870951AC1F7CB196001BB3EB /* Frameworks */,
 				870951AD1F7CB196001BB3EB /* Headers */,
 				870951AE1F7CB196001BB3EB /* Resources */,
-				876370E71F7CC0B10060FCB5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -357,24 +357,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		876370E71F7CC0B10060FCB5 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		870951AB1F7CB196001BB3EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -392,6 +374,7 @@
 				8764486C1F7F06B700239319 /* Weather.swift in Sources */,
 				8764486A1F7F069E00239319 /* Coordinate.swift in Sources */,
 				875D5EC21F81D1B200ED4E8C /* Clouds.swift in Sources */,
+				8733B7EE1F8DA33000602D1E /* WeatherAPI.swift in Sources */,
 				8764486E1F7F0C3600239319 /* Climate.swift in Sources */,
 				876448701F7F0D8600239319 /* Wind.swift in Sources */,
 			);
