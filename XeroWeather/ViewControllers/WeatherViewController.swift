@@ -13,7 +13,6 @@ import XeroWeatherCore
 class WeatherViewController: UIViewController {
     
     let viewModel: WeatherViewModel
-//    let label = UILabel()
     
     var weatherView: WeatherView {
         return view as! WeatherView
@@ -33,12 +32,6 @@ class WeatherViewController: UIViewController {
         
         view.backgroundColor = .white
         view = WeatherView(frame: view.frame)
-        
-//        label.font = UIFont.systemFont(ofSize: 34, weight: .bold)
-//        view.addSubview(label)
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-//        label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 
     override func viewDidLoad() {
@@ -48,17 +41,20 @@ class WeatherViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Dismiss", style: .plain, target: self, action: #selector(dismissVC))
         
         let url = URL(string: WeatherAPIEndpoint.currentWeather)!
-        let parameters: Resource.Parameters = [
-            WeatherAPIParameter.latitude: viewModel.location.coordinate.latitude,
-            WeatherAPIParameter.longitude: viewModel.location.coordinate.longitude,
-            WeatherAPIParameter.appid: kAppId]
+        let parameters: Resource.Parameters = [WeatherAPIParameter.latitude: viewModel.location.coordinate.latitude,
+                                               WeatherAPIParameter.longitude: viewModel.location.coordinate.longitude,
+                                               WeatherAPIParameter.appid: kAppId]
         let resource = viewModel.currentWeatherResource(url: url, parameters: parameters)
         viewModel.load(resource: resource) { [weak self] (currentWeather) in
+            guard let currentWeather = currentWeather else { return }
+            
             DispatchQueue.main.async {
                 print(currentWeather)
                 self?.weatherView.configure(with: currentWeather)
                 
-//                self?.getForecast()
+                if self?.viewModel.weather != nil {
+                    self?.getForecast()
+                }
             }
         }
     }
@@ -73,7 +69,17 @@ class WeatherViewController: UIViewController {
     }
     
     private func getForecast() {
-//        let url
-//        let parameters
+        guard let cityId = viewModel.weather?.id else { return }
+        
+        let url = URL(string: WeatherAPIEndpoint.forecast)!
+        let parameters: Resource.Parameters = [WeatherAPIParameter.cityId: cityId,
+                                                         WeatherAPIParameter.appid: kAppId]
+        let resource: Resource<Forecast> = viewModel.resource(url: url, parameters: parameters)
+        viewModel.load(resource: resource) { (forecast) in
+            guard let forecast = forecast else { return }
+            
+            print(forecast)
+            print("breakpoint")
+        }
     }
 }

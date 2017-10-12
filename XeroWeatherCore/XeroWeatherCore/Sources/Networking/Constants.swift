@@ -14,8 +14,10 @@ public struct WeatherAPIParameter {
     public static let appid = "appid"
     public static let latitude = "lat"
     public static let longitude = "lon"
+    public static let cityId = "id"
 }
 
 public struct WeatherAPIEndpoint {
     public static let currentWeather = "https://api.openweathermap.org/data/2.5/weather"
+    public static let forecast = "https://api.openweathermap.org/data/2.5/forecast"
 }

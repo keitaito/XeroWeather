@@ -20,9 +20,8 @@ class WeatherViewModel {
         self.location = location
     }
     
-    func load<A>(resource: Resource<A>, completion: @escaping (A) -> Void) {
+    func load<A>(resource: Resource<A>, completion: @escaping (A?) -> Void) {
         weatherAPI.load(resource) { (object) in
-            guard let object = object else { return }
             completion(object)
         }
     }
@@ -30,7 +29,19 @@ class WeatherViewModel {
     func currentWeatherResource(url: URL, parameters: Resource<CurrentWeather>.Parameters) -> Resource<CurrentWeather> {
         return Resource<CurrentWeather>(url: url, method: .get, parameters: parameters, headers: nil, parse: { json in
             do {
-                return try JSONDecoder().decode(CurrentWeather.self, from: json)
+                self.weather = try JSONDecoder().decode(CurrentWeather.self, from: json)
+                return self.weather
+            } catch {
+                print(error.localizedDescription)
+                return nil
+            }
+        })
+    }
+    
+    func resource<T: Codable>(url: URL, parameters: Resource<T>.Parameters) -> Resource<T> {
+        return Resource<T>(url: url, method: .get, parameters: parameters, headers: nil, parse: { json in
+            do {
+                return try JSONDecoder().decode(T.self, from: json)
             } catch {
                 print(error.localizedDescription)
                 return nil
