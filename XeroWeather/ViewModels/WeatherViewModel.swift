@@ -27,18 +27,6 @@ class WeatherViewModel {
         }
     }
     
-    func currentWeatherResource(url: URL, parameters: Resource<CurrentWeather>.Parameters) -> Resource<CurrentWeather> {
-        return Resource<CurrentWeather>(url: url, method: .get, parameters: parameters, headers: nil, parse: { json in
-            do {
-                self.weather = try JSONDecoder().decode(CurrentWeather.self, from: json)
-                return self.weather
-            } catch {
-                print(error.localizedDescription)
-                return nil
-            }
-        })
-    }
-    
     func resource<T: Codable>(url: URL, parameters: Resource<T>.Parameters) -> Resource<T> {
         return Resource<T>(url: url, method: .get, parameters: parameters, headers: nil, parse: { json in
             do {
@@ -48,5 +36,19 @@ class WeatherViewModel {
                 return nil
             }
         })
+    }
+}
+
+// MARK: - Methods and Computed Properties for forecastCollectionView
+
+extension WeatherViewModel {
+    var forecastWeatherIemCount: Int {
+        return forecast?.list.count ?? 0
+    }
+    
+    func forecastWeatherItem(at indexPath: IndexPath) -> WeatherItem? {
+        guard indexPath.item <= forecastWeatherIemCount else { return nil }
+        guard let forecast = forecast else { return nil }
+        return forecast.list[indexPath.item]
     }
 }

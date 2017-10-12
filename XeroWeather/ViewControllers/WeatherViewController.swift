@@ -32,6 +32,10 @@ class WeatherViewController: UIViewController {
         
         view.backgroundColor = .white
         view = WeatherView(frame: view.frame)
+        
+        weatherView.forecastCollectionView.delegate = self
+        weatherView.forecastCollectionView.dataSource = self
+        weatherView.forecastCollectionView.register(ForecastCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: ForecastCollectionViewCell.self))
     }
 
     override func viewDidLoad() {
@@ -40,22 +44,7 @@ class WeatherViewController: UIViewController {
         // Do any additional setup after loading the view.
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Dismiss", style: .plain, target: self, action: #selector(dismissVC))
         
-        let url = URL(string: WeatherAPIEndpoint.currentWeather)!
-        let parameters: Resource.Parameters = [WeatherAPIParameter.latitude: viewModel.location.coordinate.latitude,
-                                               WeatherAPIParameter.longitude: viewModel.location.coordinate.longitude,
-                                               WeatherAPIParameter.appid: kAppId]
-        let resource = viewModel.currentWeatherResource(url: url, parameters: parameters)
-        viewModel.load(resource: resource) { [weak self] (currentWeather) in
-            guard let strongSelf = self else { return }
-            guard let currentWeather = currentWeather else { return }
-            strongSelf.viewModel.weather = currentWeather
-            strongSelf.getForecast()
-            
-            DispatchQueue.main.async {
-                print(currentWeather)
-                strongSelf.weatherView.configure(with: currentWeather)
-            }
-        }
+        getCurrentWeather()
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,6 +54,25 @@ class WeatherViewController: UIViewController {
     
     @objc private func dismissVC() {
         dismiss(animated: true)
+    }
+    
+    private func getCurrentWeather() {
+        let url = URL(string: WeatherAPIEndpoint.currentWeather)!
+        let parameters: Resource.Parameters = [WeatherAPIParameter.latitude: viewModel.location.coordinate.latitude,
+                                               WeatherAPIParameter.longitude: viewModel.location.coordinate.longitude,
+                                               WeatherAPIParameter.appid: kAppId]
+        let resource: Resource<CurrentWeather> = viewModel.resource(url: url, parameters: parameters)
+        viewModel.load(resource: resource) { [weak self] (currentWeather) in
+            guard let strongSelf = self else { return }
+            guard let currentWeather = currentWeather else { return }
+            
+            DispatchQueue.main.async {
+                strongSelf.viewModel.weather = currentWeather
+                strongSelf.getForecast()
+                print(currentWeather)
+                strongSelf.weatherView.configure(with: currentWeather)
+            }
+        }
     }
     
     private func getForecast() {
@@ -78,9 +86,38 @@ class WeatherViewController: UIViewController {
             guard let strongSelf = self else { return }
             guard let forecast = forecast else { return }
             print(forecast)
-            strongSelf.viewModel.forecast = forecast
             
-            
+            DispatchQueue.main.async {
+                strongSelf.viewModel.forecast = forecast
+                strongSelf.weatherView.forecastCollectionView.reloadData()
+            }
         }
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+
+extension WeatherViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.forecastWeatherIemCount
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = weatherView.forecastCollectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ForecastCollectionViewCell.self), for: indexPath) as! ForecastCollectionViewCell
+        
+        if let weatherItem = viewModel.forecastWeatherItem(at: indexPath) {
+            print(weatherItem.climate.tempStringInFahrenheit(weatherItem.climate.temperature))
+            cell.configure(with: weatherItem)
+        }
+        
+        return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension WeatherViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 100)
     }
 }

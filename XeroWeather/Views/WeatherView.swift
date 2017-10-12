@@ -22,6 +22,12 @@ class WeatherView: UIView {
     let lowTemperatureLabel = UILabel()
     let highAndLowTempStackView = UIStackView()
     
+    let forecastCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
+    
+    var flowLayout: UICollectionViewFlowLayout {
+        return forecastCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -56,7 +62,7 @@ class WeatherView: UIView {
         
         highAndLowTempStackView.axis = .horizontal
         highAndLowTempStackView.spacing = 20
-        highAndLowTempStackView.distribution = .equalSpacing
+        highAndLowTempStackView.distribution = .fillEqually
         highAndLowTempStackView.addArrangedSubview(highTemperatureLabel)
         highAndLowTempStackView.addArrangedSubview(lowTemperatureLabel)
         stackView.addArrangedSubview(highAndLowTempStackView)
@@ -64,6 +70,10 @@ class WeatherView: UIView {
         // Set attributes of cityNameLabel.
         cityNameLabel.font = UIFont.systemFont(ofSize: 34, weight: .bold)
         
+        // Set up forecastCollectionView.
+        flowLayout.scrollDirection = .horizontal
+        stackView.addArrangedSubview(forecastCollectionView)
+        forecastCollectionView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
