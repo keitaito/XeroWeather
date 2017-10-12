@@ -106,7 +106,7 @@ extension WeatherViewController: UICollectionViewDataSource {
         let cell = weatherView.forecastCollectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ForecastCollectionViewCell.self), for: indexPath) as! ForecastCollectionViewCell
         
         if let weatherItem = viewModel.forecastWeatherItem(at: indexPath) {
-            print(weatherItem.climate.tempStringInFahrenheit(weatherItem.climate.temperature))
+            print(weatherItem.climate.tempStringInFahrenheit(.average))
             cell.configure(with: weatherItem)
         }
         

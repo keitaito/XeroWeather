@@ -83,8 +83,8 @@ class WeatherView: UIView {
     func configure(with currentWeather: CurrentWeather) {
         cityNameLabel.text = currentWeather.cityName
         stateLabel.text = currentWeather.weather.first?.state ?? "Unknown"
-        temperatureLabel.text = currentWeather.climate.tempStringInFahrenheit(currentWeather.climate.temperature)
-        highTemperatureLabel.text = currentWeather.climate.tempStringInFahrenheit(currentWeather.climate.maxTemperature)
-        lowTemperatureLabel.text = currentWeather.climate.tempStringInFahrenheit(currentWeather.climate.minTemperature)
+        temperatureLabel.text = currentWeather.climate.tempStringInFahrenheit(.average)
+        highTemperatureLabel.text = currentWeather.climate.tempStringInFahrenheit(.high)
+        lowTemperatureLabel.text = currentWeather.climate.tempStringInFahrenheit(.low)
     }
 }

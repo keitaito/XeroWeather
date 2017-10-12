@@ -26,6 +26,6 @@ class ForecastCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with weatherItem: WeatherItem) {
-        temperatureLabel.text = weatherItem.climate.tempStringInFahrenheit(weatherItem.climate.temperature)
+        temperatureLabel.text = weatherItem.climate.tempStringInFahrenheit(.average)
     }
 }

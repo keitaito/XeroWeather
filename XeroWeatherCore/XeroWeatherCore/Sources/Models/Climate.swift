@@ -25,15 +25,30 @@ public struct Climate: Codable {
 }
 
 extension Climate {
-    public func tempInCelsius(_ temp: Double) -> Double {
+    public enum TempType {
+        case average
+        case high
+        case low
+    }
+    
+    public func tempInCelsius(_ tempType: TempType) -> Double {
+        let temp: Double
+        switch tempType {
+        case .average:
+            temp = temperature
+        case .high:
+            temp = maxTemperature
+        case .low:
+            temp = minTemperature
+        }
         return temp - 273.15
     }
     
-    public func tempInFahrenheit(_ temp: Double) -> Double {
-        return tempInCelsius(temp) * 1.8 + 32
+    public func tempInFahrenheit(_ tempType: TempType) -> Double {
+        return tempInCelsius(tempType) * 1.8 + 32
     }
     
-    public func tempStringInFahrenheit(_ temp: Double) -> String {
-        return String(format: "%.0f°F", tempInFahrenheit(temp))
+    public func tempStringInFahrenheit(_ tempType: TempType) -> String {
+        return String(format: "%.0f°F", tempInFahrenheit(tempType))
     }
 }
