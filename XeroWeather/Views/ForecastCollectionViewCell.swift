@@ -10,15 +10,32 @@ import UIKit
 import XeroWeatherCore
 
 class ForecastCollectionViewCell: UICollectionViewCell {
+    let stackView = UIStackView()
+    let dateLabel = UILabel()
     let temperatureLabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        addSubview(temperatureLabel)
-        temperatureLabel.translatesAutoresizingMaskIntoConstraints = false
-        temperatureLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        temperatureLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        // Set constraints for stackView.
+        addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        stackView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
+        
+        // Set attributes of stackView.
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.distribution = .equalSpacing
+        stackView.spacing = 8
+        stackView.layoutMargins = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+        stackView.isLayoutMarginsRelativeArrangement = true
+        
+        stackView.addArrangedSubview(dateLabel)
+        stackView.addArrangedSubview(temperatureLabel)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -26,6 +43,8 @@ class ForecastCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with weatherItem: WeatherItem) {
+        let forecastDateFormatter = ForecastDateFormatter.shared
+        dateLabel.text = forecastDateFormatter.string(from: weatherItem.date)
         temperatureLabel.text = weatherItem.climate.tempStringInFahrenheit(.average)
     }
 }

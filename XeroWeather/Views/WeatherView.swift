@@ -31,6 +31,8 @@ class WeatherView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        backgroundColor = .white
+        
         addSubview(scrollView)
         scrollView.addSubview(stackView)
         
@@ -71,9 +73,10 @@ class WeatherView: UIView {
         cityNameLabel.font = UIFont.systemFont(ofSize: 34, weight: .bold)
         
         // Set up forecastCollectionView.
+        forecastCollectionView.backgroundColor = .white
         flowLayout.scrollDirection = .horizontal
         stackView.addArrangedSubview(forecastCollectionView)
-        forecastCollectionView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
+        forecastCollectionView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.25).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -84,7 +87,7 @@ class WeatherView: UIView {
         cityNameLabel.text = currentWeather.cityName
         stateLabel.text = currentWeather.weather.first?.state ?? "Unknown"
         temperatureLabel.text = currentWeather.climate.tempStringInFahrenheit(.average)
-        highTemperatureLabel.text = currentWeather.climate.tempStringInFahrenheit(.high)
-        lowTemperatureLabel.text = currentWeather.climate.tempStringInFahrenheit(.low)
+        highTemperatureLabel.text = "High " + currentWeather.climate.tempStringInFahrenheit(.high)
+        lowTemperatureLabel.text = "Low " + currentWeather.climate.tempStringInFahrenheit(.low)
     }
 }
