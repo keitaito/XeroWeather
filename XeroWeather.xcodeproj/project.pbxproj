@@ -8,10 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		870951461F7CAD7F001BB3EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870951451F7CAD7F001BB3EB /* AppDelegate.swift */; };
-		870951481F7CAD7F001BB3EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870951471F7CAD7F001BB3EB /* ViewController.swift */; };
 		8709514D1F7CAD7F001BB3EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8709514C1F7CAD7F001BB3EB /* Assets.xcassets */; };
 		870951501F7CAD7F001BB3EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8709514E1F7CAD7F001BB3EB /* LaunchScreen.storyboard */; };
-		870951F21F7CB632001BB3EB /* XeroWeatherCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870951C01F7CB197001BB3EB /* XeroWeatherCore.framework */; };
+		8733B7EC1F8DA25F00602D1E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8733B7EB1F8DA25F00602D1E /* Alamofire.framework */; };
+		8733B7F21F8DB24200602D1E /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8733B7F11F8DB24200602D1E /* WeatherViewModel.swift */; };
+		8733B7F81F8EEE9600602D1E /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8733B7F71F8EEE9600602D1E /* WeatherView.swift */; };
+		8749F9DD1F8D99C7009F77ED /* XeroWeatherCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870951C01F7CB197001BB3EB /* XeroWeatherCore.framework */; };
+		8749F9DE1F8D99C7009F77ED /* XeroWeatherCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 870951C01F7CB197001BB3EB /* XeroWeatherCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		87F271001F8CBDF60077166F /* LocationServicePermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87153DD01F86FA4D005BE52F /* LocationServicePermissionView.swift */; };
+		87F271011F8CBE340077166F /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876E613E1F84670F00DB7C01 /* RootViewController.swift */; };
+		87F271021F8CBE510077166F /* CityTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781ECB11F8C7067000142F0 /* CityTableViewModel.swift */; };
+		87F271031F8CBE600077166F /* CityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876E61401F8479C700DB7C01 /* CityTableViewController.swift */; };
+		87F271041F8CBE740077166F /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8787853D1F8CA27F0011CD5D /* WeatherViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,16 +37,44 @@
 			remoteGlobalIDString = 870951D41F7CB293001BB3EB;
 			remoteInfo = XeroWeatherCoreTests;
 		};
+		8749F9DF1F8D99C7009F77ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 870951BB1F7CB196001BB3EB /* XeroWeatherCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 870951AF1F7CB196001BB3EB;
+			remoteInfo = XeroWeatherCore;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8749F9E11F8D99C7009F77ED /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8749F9DE1F8D99C7009F77ED /* XeroWeatherCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		870951421F7CAD7F001BB3EB /* XeroWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XeroWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		870951451F7CAD7F001BB3EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		870951471F7CAD7F001BB3EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8709514C1F7CAD7F001BB3EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8709514F1F7CAD7F001BB3EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		870951511F7CAD7F001BB3EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		870951BB1F7CB196001BB3EB /* XeroWeatherCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XeroWeatherCore.xcodeproj; path = XeroWeatherCore/XeroWeatherCore.xcodeproj; sourceTree = "<group>"; };
+		87153DD01F86FA4D005BE52F /* LocationServicePermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServicePermissionView.swift; sourceTree = "<group>"; };
+		8733B7EB1F8DA25F00602D1E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = XeroWeatherCore/Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		8733B7F11F8DB24200602D1E /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		8733B7F71F8EEE9600602D1E /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		876E613E1F84670F00DB7C01 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		876E61401F8479C700DB7C01 /* CityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewController.swift; sourceTree = "<group>"; };
+		8781ECB11F8C7067000142F0 /* CityTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewModel.swift; sourceTree = "<group>"; };
+		8787853D1F8CA27F0011CD5D /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				870951F21F7CB632001BB3EB /* XeroWeatherCore.framework in Frameworks */,
+				8749F9DD1F8D99C7009F77ED /* XeroWeatherCore.framework in Frameworks */,
+				8733B7EC1F8DA25F00602D1E /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +112,9 @@
 			isa = PBXGroup;
 			children = (
 				870951451F7CAD7F001BB3EB /* AppDelegate.swift */,
-				870951471F7CAD7F001BB3EB /* ViewController.swift */,
+				8781ECAE1F8C7051000142F0 /* ViewModels */,
+				87153DCD1F86FA23005BE52F /* Views */,
+				876E613D1F8466F800DB7C01 /* ViewControllers */,
 				8709514C1F7CAD7F001BB3EB /* Assets.xcassets */,
 				8709514E1F7CAD7F001BB3EB /* LaunchScreen.storyboard */,
 				870951511F7CAD7F001BB3EB /* Info.plist */,
@@ -95,8 +134,37 @@
 		870951EE1F7CB632001BB3EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8733B7EB1F8DA25F00602D1E /* Alamofire.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		87153DCD1F86FA23005BE52F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				87153DD01F86FA4D005BE52F /* LocationServicePermissionView.swift */,
+				8733B7F71F8EEE9600602D1E /* WeatherView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		876E613D1F8466F800DB7C01 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				876E613E1F84670F00DB7C01 /* RootViewController.swift */,
+				876E61401F8479C700DB7C01 /* CityTableViewController.swift */,
+				8787853D1F8CA27F0011CD5D /* WeatherViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8781ECAE1F8C7051000142F0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8781ECB11F8C7067000142F0 /* CityTableViewModel.swift */,
+				8733B7F11F8DB24200602D1E /* WeatherViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,10 +177,13 @@
 				8709513E1F7CAD7F001BB3EB /* Sources */,
 				8709513F1F7CAD7F001BB3EB /* Frameworks */,
 				870951401F7CAD7F001BB3EB /* Resources */,
+				8749F9E11F8D99C7009F77ED /* Embed Frameworks */,
+				8733B7ED1F8DA29D00602D1E /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8749F9E01F8D99C7009F77ED /* PBXTargetDependency */,
 			);
 			name = XeroWeather;
 			productName = XeroWeather;
@@ -188,17 +259,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8733B7ED1F8DA29D00602D1E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/XeroWeatherCore/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8709513E1F7CAD7F001BB3EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				870951481F7CAD7F001BB3EB /* ViewController.swift in Sources */,
+				87F271021F8CBE510077166F /* CityTableViewModel.swift in Sources */,
+				87F271041F8CBE740077166F /* WeatherViewController.swift in Sources */,
+				87F271001F8CBDF60077166F /* LocationServicePermissionView.swift in Sources */,
+				87F271031F8CBE600077166F /* CityTableViewController.swift in Sources */,
 				870951461F7CAD7F001BB3EB /* AppDelegate.swift in Sources */,
+				87F271011F8CBE340077166F /* RootViewController.swift in Sources */,
+				8733B7F21F8DB24200602D1E /* WeatherViewModel.swift in Sources */,
+				8733B7F81F8EEE9600602D1E /* WeatherView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8749F9E01F8D99C7009F77ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XeroWeatherCore;
+			targetProxy = 8749F9DF1F8D99C7009F77ED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8709514E1F7CAD7F001BB3EB /* LaunchScreen.storyboard */ = {
@@ -322,9 +425,14 @@
 		870951551F7CAD7F001BB3EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D433NUFZ5K;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XeroWeatherCore/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = XeroWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.keitaito.XeroWeather;
@@ -337,9 +445,14 @@
 		870951561F7CAD7F001BB3EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D433NUFZ5K;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XeroWeatherCore/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = XeroWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.keitaito.XeroWeather;

@@ -11,14 +11,15 @@
 		870951D91F7CB293001BB3EB /* XeroWeatherCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870951B01F7CB196001BB3EB /* XeroWeatherCore.framework */; };
 		870951E61F7CB401001BB3EB /* WeatherItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870951E51F7CB401001BB3EB /* WeatherItemTests.swift */; };
 		870951ED1F7CB502001BB3EB /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870951EC1F7CB502001BB3EB /* CurrentWeather.swift */; };
+		8733B7EA1F8DA25000602D1E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876370E51F7CC0950060FCB5 /* Alamofire.framework */; };
+		8733B7EE1F8DA33000602D1E /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876370E81F7CC16D0060FCB5 /* WeatherAPI.swift */; };
+		8733B7F51F8DB7CA00602D1E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8733B7F41F8DB7CA00602D1E /* Constants.swift */; };
 		873BAA1C1F7ECCCF004F47F9 /* current-weather-by-city-id.json in Resources */ = {isa = PBXBuildFile; fileRef = 873BAA1B1F7ECCCF004F47F9 /* current-weather-by-city-id.json */; };
 		875D5EC01F81CD2D00ED4E8C /* WeatherItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875D5EBF1F81CD2D00ED4E8C /* WeatherItem.swift */; };
 		875D5EC21F81D1B200ED4E8C /* Clouds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875D5EC11F81D1B200ED4E8C /* Clouds.swift */; };
 		875D5EC41F81D61000ED4E8C /* CloudsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875D5EC31F81D61000ED4E8C /* CloudsTests.swift */; };
 		876370E11F7CBB620060FCB5 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876370E01F7CBB620060FCB5 /* Resource.swift */; };
 		876370E31F7CBBD40060FCB5 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876370E21F7CBBD40060FCB5 /* HTTPMethod.swift */; };
-		876370E61F7CC0950060FCB5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876370E51F7CC0950060FCB5 /* Alamofire.framework */; };
-		876370E91F7CC16D0060FCB5 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876370E81F7CC16D0060FCB5 /* WeatherAPI.swift */; };
 		876370EC1F7CC2250060FCB5 /* WeatherAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876370EB1F7CC2250060FCB5 /* WeatherAPITests.swift */; };
 		8764486A1F7F069E00239319 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876448691F7F069E00239319 /* Coordinate.swift */; };
 		8764486C1F7F06B700239319 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8764486B1F7F06B700239319 /* Weather.swift */; };
@@ -33,6 +34,7 @@
 		877176941F81E34800E9A16A /* FindAPIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877176931F81E34800E9A16A /* FindAPIResult.swift */; };
 		877176961F81E8BA00E9A16A /* find.json in Resources */ = {isa = PBXBuildFile; fileRef = 877176951F81E8B900E9A16A /* find.json */; };
 		877176981F81E8D000E9A16A /* FindAPIResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877176971F81E8D000E9A16A /* FindAPIResultTests.swift */; };
+		87D66EFD1F8AB1190015C96C /* CLLocationManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D66EFC1F8AB1190015C96C /* CLLocationManagerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,7 @@
 		870951D81F7CB293001BB3EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		870951E51F7CB401001BB3EB /* WeatherItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherItemTests.swift; path = XeroWeatherCoreTests/Sources/Models/WeatherItemTests.swift; sourceTree = SOURCE_ROOT; };
 		870951EC1F7CB502001BB3EB /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		8733B7F41F8DB7CA00602D1E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		873BAA1B1F7ECCCF004F47F9 /* current-weather-by-city-id.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "current-weather-by-city-id.json"; path = "../../../../api/current-weather-by-city-id.json"; sourceTree = "<group>"; };
 		875D5EBF1F81CD2D00ED4E8C /* WeatherItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherItem.swift; sourceTree = "<group>"; };
 		875D5EC11F81D1B200ED4E8C /* Clouds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clouds.swift; sourceTree = "<group>"; };
@@ -75,6 +78,7 @@
 		877176931F81E34800E9A16A /* FindAPIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAPIResult.swift; sourceTree = "<group>"; };
 		877176951F81E8B900E9A16A /* find.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = find.json; sourceTree = "<group>"; };
 		877176971F81E8D000E9A16A /* FindAPIResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAPIResultTests.swift; sourceTree = "<group>"; };
+		87D66EFC1F8AB1190015C96C /* CLLocationManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationManagerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				876370E61F7CC0950060FCB5 /* Alamofire.framework in Frameworks */,
+				8733B7EA1F8DA25000602D1E /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +164,7 @@
 		870951EA1F7CB4AE001BB3EB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				87D66EFA1F8AB0F30015C96C /* Extension */,
 				876370DF1F7CBAC30060FCB5 /* Networking */,
 				870951EB1F7CB4D9001BB3EB /* Models */,
 			);
@@ -200,6 +205,7 @@
 				876370E01F7CBB620060FCB5 /* Resource.swift */,
 				876370E21F7CBBD40060FCB5 /* HTTPMethod.swift */,
 				876370E81F7CC16D0060FCB5 /* WeatherAPI.swift */,
+				8733B7F41F8DB7CA00602D1E /* Constants.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -228,6 +234,22 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		87D66EFA1F8AB0F30015C96C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				87D66EFB1F8AB1060015C96C /* Location */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		87D66EFB1F8AB1060015C96C /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				87D66EFC1F8AB1190015C96C /* CLLocationManagerExtension.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -250,7 +272,6 @@
 				870951AC1F7CB196001BB3EB /* Frameworks */,
 				870951AD1F7CB196001BB3EB /* Headers */,
 				870951AE1F7CB196001BB3EB /* Resources */,
-				876370E71F7CC0B10060FCB5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -339,24 +360,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		876370E71F7CC0B10060FCB5 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		870951AB1F7CB196001BB3EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -364,16 +367,18 @@
 			files = (
 				870951ED1F7CB502001BB3EB /* CurrentWeather.swift in Sources */,
 				875D5EC01F81CD2D00ED4E8C /* WeatherItem.swift in Sources */,
-				876370E91F7CC16D0060FCB5 /* WeatherAPI.swift in Sources */,
 				876448741F81858D00239319 /* City.swift in Sources */,
 				876370E11F7CBB620060FCB5 /* Resource.swift in Sources */,
 				876448761F818E4A00239319 /* Forecast.swift in Sources */,
 				877176921F81E14E00E9A16A /* Sys.swift in Sources */,
 				876370E31F7CBBD40060FCB5 /* HTTPMethod.swift in Sources */,
+				8733B7F51F8DB7CA00602D1E /* Constants.swift in Sources */,
+				87D66EFD1F8AB1190015C96C /* CLLocationManagerExtension.swift in Sources */,
 				877176941F81E34800E9A16A /* FindAPIResult.swift in Sources */,
 				8764486C1F7F06B700239319 /* Weather.swift in Sources */,
 				8764486A1F7F069E00239319 /* Coordinate.swift in Sources */,
 				875D5EC21F81D1B200ED4E8C /* Clouds.swift in Sources */,
+				8733B7EE1F8DA33000602D1E /* WeatherAPI.swift in Sources */,
 				8764486E1F7F0C3600239319 /* Climate.swift in Sources */,
 				876448701F7F0D8600239319 /* Wind.swift in Sources */,
 			);
