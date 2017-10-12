@@ -56,6 +56,8 @@ class WeatherView: UIView {
         stackView.alignment = .fill
         stackView.distribution = .equalSpacing
         stackView.spacing = 0
+        stackView.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        stackView.isLayoutMarginsRelativeArrangement = true
         
         // Add subViews to stackVieww.
         stackView.addArrangedSubview(cityNameLabel)
