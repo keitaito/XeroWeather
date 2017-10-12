@@ -1,0 +1,42 @@
+{
+  "coord": {
+    "lon": -122.45,
+    "lat": 37.77
+  },
+  "weather": [
+    {
+      "id": 801,
+      "main": "Clouds",
+      "description": "few clouds",
+      "icon": "02d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 301.99,
+    "pressure": 1013,
+    "humidity": 43,
+    "temp_min": 296.15,
+    "temp_max": 307.15
+  },
+  "visibility": 16093,
+  "wind": {
+    "speed": 9.8,
+    "deg": 290
+  },
+  "clouds": {
+    "all": 20
+  },
+  "dt": 1506639360,
+  "sys": {
+    "type": 1,
+    "id": 478,
+    "message": 0.01,
+    "country": "US",
+    "sunrise": 1506607437,
+    "sunset": 1506650122
+  },
+  "id": 5391997,
+  "name": "San Francisco County",
+  "cod": 200
+}
