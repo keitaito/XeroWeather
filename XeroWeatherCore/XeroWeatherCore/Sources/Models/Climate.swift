@@ -23,3 +23,17 @@ public struct Climate: Codable {
     public let minTemperature: Double
     public let maxTemperature: Double
 }
+
+extension Climate {
+    public func tempInCelsius(_ temp: Double) -> Double {
+        return temp - 273.15
+    }
+    
+    public func tempInFahrenheit(_ temp: Double) -> Double {
+        return tempInCelsius(temp) * 1.8 + 32
+    }
+    
+    public func tempStringInFahrenheit(_ temp: Double) -> String {
+        return String(format: "%.0f°F", tempInFahrenheit(temp))
+    }
+}

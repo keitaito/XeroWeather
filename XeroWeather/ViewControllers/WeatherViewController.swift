@@ -13,7 +13,11 @@ import XeroWeatherCore
 class WeatherViewController: UIViewController {
     
     let viewModel: WeatherViewModel
-    let label = UILabel()
+//    let label = UILabel()
+    
+    var weatherView: WeatherView {
+        return view as! WeatherView
+    }
     
     init(location: CLLocation) {
         self.viewModel = WeatherViewModel(location: location)
@@ -27,13 +31,14 @@ class WeatherViewController: UIViewController {
     override func loadView() {
         super.loadView()
         
-        label.text = String(describing: viewModel.location)
-        view.addSubview(label)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        
         view.backgroundColor = .white
+        view = WeatherView(frame: view.frame)
+        
+//        label.font = UIFont.systemFont(ofSize: 34, weight: .bold)
+//        view.addSubview(label)
+//        label.translatesAutoresizingMaskIntoConstraints = false
+//        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//        label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 
     override func viewDidLoad() {
@@ -50,8 +55,8 @@ class WeatherViewController: UIViewController {
         let resource = viewModel.currentWeatherResource(url: url, parameters: parameters)
         viewModel.load(resource: resource) { [weak self] (currentWeather) in
             DispatchQueue.main.async {
-                self?.label.text = currentWeather.cityName
                 print(currentWeather)
+                self?.weatherView.configure(with: currentWeather)
                 
 //                self?.getForecast()
             }

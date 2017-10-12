@@ -55,6 +55,7 @@ class RootViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Current Location", style: .plain, target: self, action: #selector(foo))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(bar))
+        title = "XeroWeather"
     }
 
     override func didReceiveMemoryWarning() {

@@ -52,8 +52,15 @@ class CityTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         
         // Configure the cell...
-        if let location = viewModel.item(at: indexPath) {
-            cell.textLabel?.text = String(describing: location.coordinate)
+        if let section = CityTableViewSectionType(rawValue: indexPath.section) {
+            switch section {
+            case .currentLocation:
+                cell.textLabel?.text = "Current Location"
+            case .locations:
+                if let location = viewModel.item(at: indexPath) {
+                    cell.textLabel?.text = String(describing: location.coordinate)
+                }
+            }
         }
         
         return cell
@@ -61,5 +68,19 @@ class CityTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return viewModel.titleForHeader(in: section)
+    }
+    
+    // MARK: - UITableViewDeleagte
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let section = CityTableViewSectionType(rawValue: indexPath.section) else { return }
+        switch section {
+        case .currentLocation:
+            let vc = WeatherViewController(location: viewModel.currentLocation)
+            let nc = UINavigationController(rootViewController: vc)
+            present(nc, animated: true)
+        case .locations:
+            print("Locations case has not been implemented.")
+        }
     }
 }
