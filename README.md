@@ -12,3 +12,4 @@ A weather app you can check the current weather for your location.
 - Some features, like Update location feature, Add location feature, have not been imeplemented yet. Sorry!
 - No Storyboard.
 - Swift 4's Codable protocol is heavily used in XeroWeatherCore.
+- Carthage is used to add Alamofire. Please run carthage before running the app. 
