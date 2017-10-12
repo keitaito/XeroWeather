@@ -46,15 +46,14 @@ class WeatherViewController: UIViewController {
                                                WeatherAPIParameter.appid: kAppId]
         let resource = viewModel.currentWeatherResource(url: url, parameters: parameters)
         viewModel.load(resource: resource) { [weak self] (currentWeather) in
+            guard let strongSelf = self else { return }
             guard let currentWeather = currentWeather else { return }
+            strongSelf.viewModel.weather = currentWeather
+            strongSelf.getForecast()
             
             DispatchQueue.main.async {
                 print(currentWeather)
-                self?.weatherView.configure(with: currentWeather)
-                
-                if self?.viewModel.weather != nil {
-                    self?.getForecast()
-                }
+                strongSelf.weatherView.configure(with: currentWeather)
             }
         }
     }
@@ -75,11 +74,13 @@ class WeatherViewController: UIViewController {
         let parameters: Resource.Parameters = [WeatherAPIParameter.cityId: cityId,
                                                          WeatherAPIParameter.appid: kAppId]
         let resource: Resource<Forecast> = viewModel.resource(url: url, parameters: parameters)
-        viewModel.load(resource: resource) { (forecast) in
+        viewModel.load(resource: resource) { [weak self] (forecast) in
+            guard let strongSelf = self else { return }
             guard let forecast = forecast else { return }
-            
             print(forecast)
-            print("breakpoint")
+            strongSelf.viewModel.forecast = forecast
+            
+            
         }
     }
 }

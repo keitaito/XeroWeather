@@ -15,6 +15,7 @@ class WeatherViewModel {
     
     let location: CLLocation
     var weather: CurrentWeather?
+    var forecast: Forecast?
     
     init(location: CLLocation) {
         self.location = location
