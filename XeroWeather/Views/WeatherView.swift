@@ -15,7 +15,7 @@ class WeatherView: UIView {
     let stackView = UIStackView()
     let cityNameLabel = UILabel()
     let stateLabel = UILabel()
-//    let iconImageView = UIImageView()
+    let iconImageView = UIImageView()
     
     let temperatureLabel = UILabel()
     let highTemperatureLabel = UILabel()
@@ -53,7 +53,7 @@ class WeatherView: UIView {
         
         // Set attributes of stackView.
         stackView.axis = .vertical
-        stackView.alignment = .fill
+        stackView.alignment = .center
         stackView.distribution = .equalSpacing
         stackView.spacing = 0
         stackView.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
@@ -71,13 +71,20 @@ class WeatherView: UIView {
         highAndLowTempStackView.addArrangedSubview(lowTemperatureLabel)
         stackView.addArrangedSubview(highAndLowTempStackView)
         
+        stackView.addArrangedSubview(iconImageView)
+        iconImageView.contentMode = .scaleAspectFit
+        
+        
         // Set attributes of cityNameLabel.
         cityNameLabel.font = UIFont.systemFont(ofSize: 34, weight: .bold)
+        stateLabel.font = UIFont.systemFont(ofSize: 51, weight: .bold)
+        temperatureLabel.font = UIFont.systemFont(ofSize: 68, weight: .bold)
         
         // Set up forecastCollectionView.
         forecastCollectionView.backgroundColor = .white
         flowLayout.scrollDirection = .horizontal
         stackView.addArrangedSubview(forecastCollectionView)
+        forecastCollectionView.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
         forecastCollectionView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.25).isActive = true
     }
     

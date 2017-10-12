@@ -53,7 +53,7 @@ class RootViewController: UIViewController {
             view = permissionView
         }
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Current Location", style: .plain, target: self, action: #selector(foo))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Update", style: .plain, target: self, action: #selector(foo))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(bar))
         title = "XeroWeather"
     }
@@ -64,16 +64,11 @@ class RootViewController: UIViewController {
     }
     
     @objc private func foo() {
-        print("foo")
+        errorHandler("Update feature has not been implemented. Sorry!")
     }
     
     @objc private func bar() {
-        
-        guard childViewControllers.isEmpty else {
-            print("childVCs exist already: \(childViewControllers)")
-            return
-        }
-        
+        errorHandler("Add feature has not been implemented. Sorry!")
     }
     
     private func createCityTVC() {

@@ -68,11 +68,29 @@ class WeatherViewController: UIViewController {
             
             DispatchQueue.main.async {
                 strongSelf.viewModel.weather = currentWeather
+                if let iconURL = currentWeather.weather.first?.iconURL {
+                    strongSelf.getWeatherIconImage(with: iconURL) { [weak self] data in
+                        DispatchQueue.main.async {
+                            self?.weatherView.iconImageView.image = UIImage(data: data)
+                        }
+                    }
+                }
                 strongSelf.getForecast()
                 print(currentWeather)
                 strongSelf.weatherView.configure(with: currentWeather)
             }
         }
+    }
+    
+    private func getWeatherIconImage(with url: URL, completion: @escaping (Data) -> Void) {
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data else {
+                error.map { print($0.localizedDescription) }
+                return
+            }
+            
+            completion(data)
+        }.resume()
     }
     
     private func getForecast() {
@@ -106,8 +124,16 @@ extension WeatherViewController: UICollectionViewDataSource {
         let cell = weatherView.forecastCollectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ForecastCollectionViewCell.self), for: indexPath) as! ForecastCollectionViewCell
         
         if let weatherItem = viewModel.forecastWeatherItem(at: indexPath) {
-            print(weatherItem.climate.tempStringInFahrenheit(.average))
+//            print(weatherItem.climate.tempStringInFahrenheit(.average))
             cell.configure(with: weatherItem)
+            
+            if let iconURL = weatherItem.weather.first?.iconURL {
+                getWeatherIconImage(with: iconURL) { data in
+                    DispatchQueue.main.async {
+                        cell.iconImageView.image = UIImage(data: data)
+                    }
+                }
+            }
         }
         
         return cell

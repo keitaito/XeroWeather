@@ -13,6 +13,7 @@ class ForecastCollectionViewCell: UICollectionViewCell {
     let stackView = UIStackView()
     let dateLabel = UILabel()
     let temperatureLabel = UILabel()
+    let iconImageView = UIImageView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,10 +37,21 @@ class ForecastCollectionViewCell: UICollectionViewCell {
         
         stackView.addArrangedSubview(dateLabel)
         stackView.addArrangedSubview(temperatureLabel)
+        stackView.addArrangedSubview(iconImageView)
+        
+        iconImageView.contentMode = .scaleAspectFit
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        dateLabel.text = nil
+        temperatureLabel.text = nil
+        iconImageView.image = nil
     }
     
     func configure(with weatherItem: WeatherItem) {

@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let vc = RootViewController()
         let nc = UINavigationController(rootViewController: vc)
+        nc.navigationBar.prefersLargeTitles = true
         
         window?.rootViewController = nc
         

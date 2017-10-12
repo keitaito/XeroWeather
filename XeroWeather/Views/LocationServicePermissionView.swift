@@ -24,8 +24,8 @@ class LocationServicePermissionView: UIView {
         addSubview(persmissionButton)
         
         persmissionButton.setTitle("Check weather at your locaiton", for: .normal)
-        persmissionButton.backgroundColor = .green
-        persmissionButton.contentEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        persmissionButton.backgroundColor = self.tintColor
+        persmissionButton.contentEdgeInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
         persmissionButton.addTarget(self, action: #selector(foo), for: .touchUpInside)
         
         setupLayout()

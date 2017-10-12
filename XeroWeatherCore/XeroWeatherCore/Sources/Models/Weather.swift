@@ -21,3 +21,9 @@ public struct Weather: Codable {
     public let description: String
     public let iconString: String
 }
+
+extension Weather {
+    public var iconURL: URL {
+        return URL(string: "https://openweathermap.org/img/w/\(iconString).png")!
+    }
+}

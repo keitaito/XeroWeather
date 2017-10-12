@@ -27,10 +27,6 @@ class CityTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
-        
-        let vc = WeatherViewController(location: viewModel.currentLocation)
-        let nc = UINavigationController(rootViewController: vc)
-        present(nc, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,8 +73,10 @@ class CityTableViewController: UITableViewController {
         switch section {
         case .currentLocation:
             let vc = WeatherViewController(location: viewModel.currentLocation)
+            vc.title = "Curret Location"
             let nc = UINavigationController(rootViewController: vc)
             present(nc, animated: true)
+            nc.navigationBar.prefersLargeTitles = true
         case .locations:
             print("Locations case has not been implemented.")
         }
