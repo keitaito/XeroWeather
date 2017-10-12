@@ -9,4 +9,6 @@ A weather app you can check the current weather for your location.
 - XeroWeather main iOS app has a dependency called XeroWeatherCore.
 - XeroWeatherCore has a dependency Alamofire for networking.
 - WeatherAPI class is designed based on [objc.io's Swift Talk Episode 1](https://talk.objc.io/episodes/S01E01-networking).
-- Some features, like Update location feature, Add location feature, have not been imeplemented yet. Sorry! 
+- Some features, like Update location feature, Add location feature, have not been imeplemented yet. Sorry!
+- No Storyboard.
+- Swift 4's Codable protocol is heavily used in XeroWeatherCore.
